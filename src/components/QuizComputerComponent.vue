@@ -87,7 +87,7 @@
     </button>
   </div>
   <router-link to="/end">
-    <button class="results">Results</button>
+    <button class="results">End quiz</button>
   </router-link>
 </template>
 

@@ -90,7 +90,7 @@
       <button
         class="results"
       >
-        Results
+        End quiz
       </button>
   </router-link>
 </template>
