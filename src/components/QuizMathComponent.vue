@@ -50,15 +50,6 @@
     :key="results.id"
   >
     <button
-      id="isCorrect"
-      @click="
-        score += 1;
-        submit();
-      "
-    >
-      {{ results.correct_answer }}
-    </button>
-    <button
       id="isWrong"
       @click="
         scoreWrong++;
@@ -66,6 +57,15 @@
       "
     >
       {{ results.incorrect_answers[0] }}
+    </button>
+    <button
+      id="isCorrect"
+      @click="
+        score += 1;
+        submit();
+      "
+    >
+      {{ results.correct_answer }}
     </button>
     <button
       id="isWrong"

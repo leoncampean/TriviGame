@@ -50,15 +50,6 @@
     :key="results.id"
   >
     <button
-      id="isCorrect"
-      @click="
-        score += 1;
-        submit();
-      "
-    >
-      {{ results.correct_answer }}
-    </button>
-    <button
       id="isWrong"
       @click="
         scoreWrong++;
@@ -77,6 +68,15 @@
       {{ results.incorrect_answers[1] }}
     </button>
     <button
+      id="isCorrect"
+      @click="
+        score += 1;
+        submit();
+      "
+    >
+      {{ results.correct_answer }}
+    </button>
+    <button
       id="isWrong"
       @click="
         scoreWrong++;
@@ -87,11 +87,7 @@
     </button>
   </div>
   <router-link to="/end">
-      <button
-        class="results"
-      >
-        Results
-      </button>
+    <button class="results">Results</button>
   </router-link>
 </template>
 
@@ -107,7 +103,6 @@ export default {
     minuteCount: 9,
     secondCount: 59,
   }),
-
 
   mounted() {
     this.getData();
@@ -176,8 +171,7 @@ export default {
 
   methods: {
     getData() {
-      let url =
-        "https://opentdb.com/api.php?amount=50&category=18";
+      let url = "https://opentdb.com/api.php?amount=50&category=18";
       axios.get(url).then((response) => {
         this.allResults = response.data.results;
         console.log(response.data);
@@ -322,7 +316,7 @@ export default {
   border: 2px solid rgb(189, 42, 16);
 }
 
-@media (max-width: 800px){
+@media (max-width: 800px) {
   .results {
     font-size: 15px;
     margin-left: 40%;
@@ -339,7 +333,7 @@ export default {
   .button-div button {
     font-size: 13px;
   }
-  .trivia-div h1{
+  .trivia-div h1 {
     font-size: 20px;
   }
 
@@ -362,5 +356,4 @@ export default {
     font-size: 17px;
   }
 }
-
 </style>
